@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fa">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>طراحی نرم افزار </title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Vazirmatn", sans-serif;
+      background: linear-gradient(135deg, #c3a8ff, #e7d6ff, #f8e8ff);
+      background-size: 400% 400%;
+      animation: gradientShift 10s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
+      box-shadow: 0 8px 30px rgba(140, 80, 255, 0.2);
+      padding: 30px 40px;
+      max-width: 420px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(100, 50, 255, 0.25);
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      box-shadow: 0 0 20px rgba(110, 80, 255, 0.5);
+      animation: pulse 2.5s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 15px rgba(110, 80, 255, 0.4); }
+      50% { box-shadow: 0 0 30px rgba(110, 80, 255, 0.7); }
+    }
+
+    .name {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .student-id {
+      font-weight: 600;
+      color: #555;
+      background: rgba(110, 80, 255, 0.1);
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    .line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #bbb, transparent);
+      margin: 12px 0;
+    }
+
+    .developer {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .badge {
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      border-radius: 50%;
+      opacity: 0.15;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="badge"></div>
+
+    <div class="avatar">
+      <i class="fa-solid fa-user"></i>
+    </div>
+
+    <h1 class="name">Beritan Ahmadzade </h1>
+
+    <div class="student-id">شماره دانشجویی: 40113011002</div>
+
+    <div class="line"></div>
+
+    <div class="developer"></div>
+  </div>
+
+</body>
+</html>
