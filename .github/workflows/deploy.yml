@@ -43,13 +43,10 @@ jobs:
             echo "Installing dependencies..."
             pip install -r requirements.txt
             
-            echo "Restarting service..."
-            systemctl stop $SERVICE_NAME || true
-            pkill -f "python.*app.py" || true
-            lsof -ti:5001 | xargs kill -9 2>/dev/null || true
-            sleep 2
-            systemctl start $SERVICE_NAME
-            
+            echo "Restarting services..."
+            systemctl restart $SERVICE_NAME
+            systemctl restart nginx
+
             sleep 3
             
             if systemctl is-active --quiet $SERVICE_NAME; then
