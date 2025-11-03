@@ -44,7 +44,11 @@ jobs:
             pip install -r requirements.txt
             
             echo "Restarting service..."
-            systemctl restart $SERVICE_NAME
+            systemctl stop $SERVICE_NAME || true
+            pkill -f "python.*app.py" || true
+            lsof -ti:5001 | xargs kill -9 2>/dev/null || true
+            sleep 2
+            systemctl start $SERVICE_NAME
             
             sleep 3
             
